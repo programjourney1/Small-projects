@@ -1,0 +1,18 @@
+function removeLinesWithWord(lines, word) {
+  return lines.filter(function(line) {
+    return !line.includes(word);
+  });
+}
+
+var lines = [
+  "This line does not contain the word.",
+  "This line contains the word.",
+  "This line also does not contain the word."
+];
+
+var wordToRemove = "contains";
+
+var newLines = removeLinesWithWord(lines, wordToRemove);
+
+console.log(newLines);
+// Output: ["This line does not contain the word.", "This line also does not contain the word."]
