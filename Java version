@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class TextLineRemover {
+    public static ArrayList<String> removeLinesWithWord(ArrayList<String> lines, String word) {
+        ArrayList<String> newLines = new ArrayList<String>();
+        for (String line : lines) {
+            if (!line.contains(word)) {
+                newLines.add(line);
+            }
+        }
+        return newLines;
+    }
+}
+
+
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> lines = new ArrayList<String>();
+        lines.add("This line does not contain the word.");
+        lines.add("This line contains the word.");
+        lines.add("This line also does not contain the word.");
+
+        String wordToRemove = "contains";
+
+        ArrayList<String> newLines = TextLineRemover.removeLinesWithWord(lines, wordToRemove);
+
+        System.out.println(newLines);
+        // Output: ["This line does not contain the word.", "This line also does not contain the word."]
+    }
+}
